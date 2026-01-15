@@ -36,8 +36,8 @@ const Navbar = () => {
 
   const mainNavItems = siteConfig.navigation;
   
-  // Determine if we should use light text (on dark background)
-  const useLightText = isHomePage && !isScrolled;
+  // Always use light text on navbar (dark background) unless scrolled
+  const useLightText = !isScrolled;
 
   return (
     <>
