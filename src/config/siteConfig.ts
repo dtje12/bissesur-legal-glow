@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "Advocatenkantoor Bissesur",
+  name: "Advocatenkantoor Bissessur",
   tagline: "Uw recht, onze strijd",
   description: "Professionele juridische bijstand met persoonlijke aandacht. Wij staan voor u klaar.",
   
   contact: {
     phone: "070 427 6852",
     phoneLink: "tel:0704276852",
-    email: "info@advocatenkantoor-bissesur.nl",
+    email: "info@advocatenkantoor-bissessur.nl",
     address: {
       street: "Weimarstraat 227",
       postalCode: "2562 HG",
@@ -22,11 +22,11 @@ export const siteConfig = {
   },
 
   lawyer: {
-    name: "Mr. R. Bissesur",
+    name: "Mr. A.R. Bissessur",
     title: "Advocaat",
-    bio: `Mr. R. Bissesur is een ervaren advocaat met meer dan 15 jaar ervaring in de juridische praktijk. Na zijn rechtenstudie aan de Universiteit Leiden heeft hij zich gespecialiseerd in diverse rechtsgebieden, waarbij de belangen van de cliënt altijd centraal staan.
+    bio: `Mr. A.R. Bissessur is een ervaren advocaat met ruime ervaring in de juridische praktijk. Na zijn rechtenstudie heeft hij zich gespecialiseerd in diverse rechtsgebieden, waarbij de belangen van de cliënt altijd centraal staan.
 
-Met een scherp juridisch inzicht en een persoonlijke benadering streeft Mr. Bissesur ernaar om voor elke cliënt het beste resultaat te behalen. Hij staat bekend om zijn toegankelijkheid, duidelijke communicatie en vastberadenheid in de rechtszaal.`,
+Met een scherp juridisch inzicht en een persoonlijke benadering streeft Mr. Bissessur ernaar om voor elke cliënt het beste resultaat te behalen. Hij staat bekend om zijn toegankelijkheid, duidelijke communicatie en vastberadenheid in de rechtszaal.`,
     values: [
       {
         title: "Integriteit",
@@ -96,14 +96,13 @@ Met een scherp juridisch inzicht en een persoonlijke benadering streeft Mr. Biss
     { label: "Home", path: "/" },
     { label: "Over Ons", path: "/over-ons" },
     { label: "Rechtsgebieden", path: "/rechtsgebieden" },
+    { label: "Tarieven", path: "/tarieven" },
     { label: "Contact", path: "/contact" },
-    { label: "Klachtenregeling", path: "/klachtenregeling" },
-    { label: "Algemene Voorwaarden", path: "/algemene-voorwaarden" }
   ],
 
   footerLinks: [
     { label: "Klachtenregeling", path: "/klachtenregeling" },
     { label: "Algemene Voorwaarden", path: "/algemene-voorwaarden" },
-    { label: "Privacy", path: "/algemene-voorwaarden" }
+    { label: "Tarieven", path: "/tarieven" }
   ]
 };

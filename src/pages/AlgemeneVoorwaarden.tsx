@@ -14,7 +14,7 @@ const AlgemeneVoorwaarden = () => {
             </h1>
             <div className="w-16 h-1 bg-accent mb-6" />
             <p className="text-xl text-primary-foreground/80">
-              De algemene voorwaarden van {siteConfig.name}.
+              Algemene voorwaarden {siteConfig.name}
             </p>
           </div>
         </div>
@@ -27,110 +27,108 @@ const AlgemeneVoorwaarden = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 1 - Definities
+                  1. Definities
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-2">
+                <p className="text-muted-foreground leading-relaxed mb-4">
                   In deze algemene voorwaarden wordt verstaan onder:
                 </p>
                 <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                  <li><strong>Kantoor:</strong> {siteConfig.name}, gevestigd te {siteConfig.contact.address.city}.</li>
-                  <li><strong>Cliënt:</strong> De natuurlijke of rechtspersoon die aan het Kantoor opdracht geeft tot het verrichten van juridische diensten.</li>
-                  <li><strong>Opdracht:</strong> De overeenkomst van opdracht tussen Cliënt en Kantoor.</li>
+                  <li><strong>a. {siteConfig.name}:</strong> de eenmanszaak van mr. A.R. Bissessur, gevestigd te 's-Gravenhage.</li>
+                  <li><strong>b. Cliënt:</strong> de contractspartij van {siteConfig.name}.</li>
+                  <li><strong>c. Overeenkomst:</strong> de overeenkomst van opdracht tussen opdrachtgever en {siteConfig.name}.</li>
+                  <li><strong>d. Honorarium:</strong> de financiële vergoeding (tijdsevenredig of anderszins) welke {siteConfig.name} voor de uitvoering van de overeenkomst met opdrachtgever is overeengekomen, een en ander exclusief verschotten en BTW.</li>
+                  <li><strong>e. Verschotten:</strong> de kosten die door {siteConfig.name} worden gemaakt in het belang van de uitvoering van de overeengekomen werkzaamheden, zoals bijvoorbeeld griffierechten, deurwaarderskosten, leges en reiskosten.</li>
                 </ul>
               </div>
 
               <div>
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 2 - Toepasselijkheid
+                  2. Toepasselijkheid
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Deze algemene voorwaarden zijn van toepassing op alle opdrachten die aan het 
-                  Kantoor worden verstrekt, alsmede op alle rechtsverhoudingen tussen het Kantoor 
-                  en de Cliënt.
+                  Deze algemene voorwaarden zijn van toepassing op alle overeenkomsten, opdrachten en/of offertes of andere rechtsbetrekkingen tussen {siteConfig.name} en de cliënt, tenzij voorafgaand aan de overeenkomst uitdrukkelijk schriftelijk anders is overeengekomen. De algemene voorwaarden zijn ook van toepassing op aanvullende opdrachten en vervolgopdrachten. De algemene voorwaarden worden bij de opdrachtbevestiging verstrekt.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 3 - Opdracht
+                  3. Overeenkomst
+                </h2>
+                <ul className="list-none space-y-4 text-muted-foreground">
+                  <li><strong>a.</strong> Wanneer een cliënt aan {siteConfig.name} een opdracht geeft teneinde zijn belangen te behartigen, komt de overeenkomst (van opdracht) tussen de cliënt en {siteConfig.name} pas tot stand nadat {siteConfig.name} deze heeft aanvaard. Opdrachten worden met uitsluiting van het bepaalde in artikel 7:404 BW en 7.407 lid 2 BW aanvaard.</li>
+                  <li><strong>b.</strong> Iedere opdracht wordt geacht uitsluitend te zijn verstrekt aan en aanvaard door {siteConfig.name}.</li>
+                  <li><strong>c.</strong> De uitvoering van verstrekte opdrachten geschiedt uitsluitend ten behoeve van de opdrachtgever. Derden kunnen aan de uitvoering van de voor de opdrachtgever verrichte werkzaamheden geen rechten ontlenen.</li>
+                  <li><strong>d.</strong> De cliënt staat ervoor in aan de advocaat de juiste en volledige gegevens en bescheiden ter beschikking te stellen.</li>
+                  <li><strong>e.</strong> De advocaat voert de opdracht uit met een zorgvuldigheid die van hem mag worden verwacht; daarbij is de cliënt ervan op de hoogte dat de advocaat de door Orde van Advocaten opgelegde gedragsregels bij de uitoefening van zijn praktijk dient te respecteren en aanvaardt de gevolgen die hieruit kunnen voortvloeien.</li>
+                  <li><strong>f.</strong> De opdracht houdt geen resultaatsverbintenis in maar is een inspanningsverbintenis; de advocaat kan dus niet instaan voor het behalen van het beoogde resultaat.</li>
+                  <li><strong>g.</strong> {siteConfig.name} is gerechtigd om bij de uitvoering van de werkzaamheden derden in te schakelen voor rekening en risico van de cliënt.</li>
+                  <li><strong>h.</strong> Bij het verstrekken van de opdracht en voor aanvang van de werkzaamheden dient de cliënt een afschrift van een geldig legitimatiebewijs af te geven.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  4. Honorarium
+                </h2>
+                <ul className="list-none space-y-4 text-muted-foreground">
+                  <li><strong>a.</strong> {siteConfig.name} brengt aan cliënt vanwege de uitvoering van de overeengekomen opdracht honorarium in rekening, te vermeerderen met verschotten en verschuldigde BTW. Een en ander tenzij schriftelijk uitdrukkelijk anders overeengekomen.</li>
+                  <li><strong>b.</strong> Als honorarium hanteert {siteConfig.name} een uurtarief excl. BTW. {siteConfig.name} behoudt zich het recht voor het met de cliënt overeengekomen honorarium elk jaar bij het begin van het kalenderjaar te indexeren met een in verhouding tot de ontwikkeling van het algemene prijspeil redelijk percentage.</li>
+                  <li><strong>c.</strong> Door {siteConfig.name} zullen verrichte werkzaamheden maandelijks in rekening worden gebracht. Bij aanvang van de werkzaamheden is {siteConfig.name} gerechtigd van de cliënt de betaling van een voorschot te verlangen. Een ontvangen voorschot wordt verrekend met de einddeclaratie. Betaling dient te geschieden binnen een termijn van 14 dagen na factuurdatum, zonder dat de cliënt gerechtigd is enige korting, inhouding of verrekening toe te passen. Bij overtreding van deze termijn is de cliënt van rechtswege in verzuim en is vertragingsrente, gelijk aan de wettelijke geldende rente, verschuldigd.</li>
+                  <li><strong>d.</strong> Wanneer betaling van de factuur niet binnen de aangegeven termijn volledig is voldaan, heeft {siteConfig.name} het recht, zonder nadere aankondiging haar werkzaamheden voor de cliënt in het kader van de verleende opdracht op te schorten.</li>
+                  <li><strong>e.</strong> Indien {siteConfig.name} genoodzaakt is invorderingsmaatregelen te treffen jegens de opdrachtgever die in verzuim is, komen alle buitengerechtelijke en gerechtelijke kosten die verband houden met deze invordering voor rekening van de cliënt.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  5. Gefinancierde rechtsbijstand
+                </h2>
+                <ul className="list-none space-y-4 text-muted-foreground">
+                  <li><strong>a.</strong> Met de cliënt is besproken of deze in aanmerking komt gefinancierde rechtsbijstand. Cliënt verklaart zich ermee bekend dat indien {siteConfig.name} namens cliënt een toevoeging aanvraagt bij de Raad voor Rechtsbijstand, de Raad ter uitvoering van zijn wettelijke taak informatie over de cliënt – en eventueel ook diens partner – kan opvragen bij overheidsinstanties als de gemeentelijke basisadministratie en de belastingen.</li>
+                  <li><strong>b.</strong> De cliënt verklaart zich ermee bekend dat de Raad voor Rechtsbijstand een eigen bijdrage zal opleggen, welke door {siteConfig.name} aan cliënt in rekening wordt gebracht. {siteConfig.name} is gerechtigd een voorschot te verlangen van de te verwachten kosten ter zake de eigen bijdrage en de verschotten.</li>
+                  <li><strong>c.</strong> Indien de toevoegingsaanvraag wordt afgewezen of de toevoeging tussentijds dan wel achteraf wordt ingetrokken, is cliënt gehouden de reeds verrichte werkzaamheden af te rekenen op basis van het op dat moment geldende uurtarief.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  6. Aansprakelijkheid
+                </h2>
+                <ul className="list-none space-y-4 text-muted-foreground">
+                  <li><strong>a.</strong> Iedere aansprakelijkheid van {siteConfig.name} voor schade jegens cliënten en derden is beperkt tot het bedrag waarop het in het betreffende geval uit hoofde van de door {siteConfig.name} gesloten beroepsaansprakelijkheidsverzekering aanspraak bestaat.</li>
+                  <li><strong>b.</strong> Indien om welke reden dan ook geen uitkering krachtens de verzekering als bedoeld in het voorgaande lid mocht plaatsvinden, is de aansprakelijkheid van {siteConfig.name} of bij haar werkzame personen (in welke hoedanigheid ook) beperkt tot het door de cliënt betaalde honorarium, e.e.a. met een maximum van € 25.000,--.</li>
+                  <li><strong>c.</strong> {siteConfig.name} is niet aansprakelijk voor eventuele tekortkomingen van door haar ingeschakelde derden.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  7. Archivering en bewaartermijn
+                </h2>
+                <ul className="list-none space-y-4 text-muted-foreground">
+                  <li><strong>a.</strong> Dossiers zullen gedurende zeven jaren worden bewaard. Als aanvangsdatum van deze termijn geldt de datum waarop door {siteConfig.name} voor het laatst inhoudelijke werkzaamheden in de zaak zijn verricht.</li>
+                  <li><strong>b.</strong> Na het einde van de opdracht worden de in het dossier aanwezige originele stukken op diens verzoek aan de cliënt verstrekt. {siteConfig.name} zal de kosten van toezending van deze stukken in rekening brengen bij de cliënt.</li>
+                  <li><strong>c.</strong> Voor de uitvoering van de door cliënt verleende opdracht worden zijn/haar persoonsgegevens verzameld en bewaard, e.e.a. in overeenstemming met de Wet Bescherming Persoonsgegevens. {siteConfig.name} zal geen persoonsgegevens aan derden verstrekken, tenzij zij daartoe verplicht is op grond van de wet, een rechterlijke of arbitrale uitspraak of een bindend advies.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  8. Klachten
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Alle opdrachten worden uitsluitend aanvaard en uitgevoerd door het Kantoor. 
-                  De toepasselijkheid van de artikelen 7:404 BW en 7:407 lid 2 BW wordt uitdrukkelijk 
-                  uitgesloten. Het Kantoor bepaalt de wijze waarop de opdracht wordt uitgevoerd.
+                  Als de cliënt een klacht heeft over het werk van de advocaat of over de declaratie van de advocaat, dan dient de cliënt deze klacht schriftelijk voor te leggen aan de advocaat. De klacht zal vervolgens worden behandeld volgens de <Link to="/klachtenregeling" className="text-primary hover:underline">kantoorklachtenregeling</Link> van {siteConfig.name}. Deze klachtenregeling ligt ter inzage op het kantoor en bevat een beschrijving van de klachtenprocedure. {siteConfig.name} is aangesloten bij de Geschillencommissie Advocatuur.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 4 - Honorarium en Kosten
+                  9. Toepasselijk recht en bevoegde rechter
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  De werkzaamheden van het Kantoor worden in rekening gebracht op basis van het 
-                  aantal bestede uren vermenigvuldigd met het geldende uurtarief, tenzij schriftelijk 
-                  anders is overeengekomen. Het Kantoor is gerechtigd een voorschot te verlangen.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Naast het honorarium worden aan de Cliënt in rekening gebracht de verschotten 
-                  (zoals griffierechten, deurwaarderskosten en kosten van derden) en kantoorkosten.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 5 - Betaling
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Betaling van declaraties dient te geschieden binnen veertien dagen na factuurdatum. 
-                  Bij niet-tijdige betaling is de Cliënt van rechtswege in verzuim en is over het 
-                  openstaande bedrag de wettelijke rente verschuldigd.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 6 - Aansprakelijkheid
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  De aansprakelijkheid van het Kantoor voor schade, voortvloeiend uit of verband 
-                  houdend met de uitvoering van een opdracht, is beperkt tot het bedrag dat in het 
-                  desbetreffende geval door de beroepsaansprakelijkheidsverzekering wordt uitgekeerd, 
-                  vermeerderd met het eigen risico dat op grond van de polisvoorwaarden voor rekening 
-                  van het Kantoor komt.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 7 - Klachten
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Het Kantoor beschikt over een klachtenregeling. Klachten over de totstandkoming 
-                  of de uitvoering van een overeenkomst met het Kantoor kunnen worden ingediend 
-                  conform de <Link to="/klachtenregeling" className="text-primary hover:underline">klachtenregeling</Link>.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 8 - Toepasselijk Recht
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Op de rechtsverhouding tussen het Kantoor en de Cliënt is Nederlands recht van 
-                  toepassing. Geschillen zullen worden voorgelegd aan de bevoegde rechter te Den Haag.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  Artikel 9 - Privacy
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Het Kantoor verwerkt persoonsgegevens in overeenstemming met de Algemene Verordening 
-                  Gegevensbescherming (AVG). Persoonsgegevens worden uitsluitend verwerkt voor zover 
-                  noodzakelijk voor de uitvoering van de opdracht en voor het voldoen aan wettelijke 
-                  verplichtingen.
-                </p>
+                <ul className="list-none space-y-4 text-muted-foreground">
+                  <li><strong>a.</strong> Op de overeenkomst van opdracht tussen {siteConfig.name} en de cliënt is Nederlands recht van toepassing.</li>
+                  <li><strong>b.</strong> Alle geschillen verband houdend met de opdracht bedoeld onder lid a worden beslecht door de bevoegde rechter te Den Haag, onverlet de mogelijkheid van de cliënt om in het kader van het advocatentuchtrecht tegen {siteConfig.name} te ageren.</li>
+                </ul>
               </div>
 
               <div className="bg-secondary p-6 rounded-lg">
@@ -141,12 +139,6 @@ const AlgemeneVoorwaarden = () => {
                   {siteConfig.contact.address.postalCode} {siteConfig.contact.address.city}<br />
                   Tel: {siteConfig.contact.phone}<br />
                   Email: {siteConfig.contact.email}
-                </p>
-              </div>
-
-              <div className="border-t border-border pt-6">
-                <p className="text-muted-foreground text-sm">
-                  Laatst bijgewerkt: januari 2025
                 </p>
               </div>
             </div>
