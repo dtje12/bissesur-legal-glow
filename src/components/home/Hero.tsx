@@ -18,16 +18,8 @@ const Hero = () => {
 
       <div className="container-custom relative z-10 pt-20">
         <div className="max-w-3xl">
-          {/* Subtitle */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full mb-6 animate-fade-in">
-            <span className="w-2 h-2 bg-accent rounded-full" />
-            <span className="text-sm font-medium text-primary-foreground/90">
-              Advocatuur met persoonlijke aandacht
-            </span>
-          </div>
-
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary-foreground leading-tight mb-6 animate-fade-in">
             {siteConfig.name}
           </h1>
 
@@ -44,10 +36,10 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
             <Link
-              to="/contact"
+              to="/rechtsgebieden"
               className="btn-gold inline-flex items-center justify-center gap-2 text-base"
             >
-              Gratis Kennismakingsgesprek
+              Onze Specialisaties
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
@@ -55,26 +47,8 @@ const Hero = () => {
               className="btn-outline-light inline-flex items-center justify-center gap-2 text-base"
             >
               <Phone className="w-4 h-4" />
-              Bel Direct: {siteConfig.contact.phone}
+              Bel: {siteConfig.contact.phone}
             </a>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-12 pt-8 border-t border-primary-foreground/10 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
-            <div className="flex flex-wrap gap-8">
-              <div>
-                <p className="text-3xl font-serif font-bold text-accent">15+</p>
-                <p className="text-sm text-primary-foreground/70">Jaar Ervaring</p>
-              </div>
-              <div>
-                <p className="text-3xl font-serif font-bold text-accent">500+</p>
-                <p className="text-sm text-primary-foreground/70">Zaken Behandeld</p>
-              </div>
-              <div>
-                <p className="text-3xl font-serif font-bold text-accent">98%</p>
-                <p className="text-sm text-primary-foreground/70">Tevreden Cliënten</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  const mainNavItems = siteConfig.navigation.slice(0, 4);
+  const mainNavItems = siteConfig.navigation;
 
   return (
     <>
@@ -41,7 +41,7 @@ const Navbar = () => {
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
           isScrolled
-            ? "bg-primary/98 backdrop-blur-sm shadow-lg py-3"
+            ? "bg-background shadow-lg py-3"
             : "bg-transparent py-4"
         )}
       >
@@ -49,11 +49,20 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded bg-accent flex items-center justify-center transition-transform group-hover:scale-105">
-                <Scale className="w-5 h-5 text-primary" />
+              <div className={cn(
+                "w-10 h-10 rounded flex items-center justify-center transition-all",
+                isScrolled ? "bg-primary" : "bg-accent"
+              )}>
+                <Scale className={cn(
+                  "w-5 h-5",
+                  isScrolled ? "text-primary-foreground" : "text-primary"
+                )} />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-lg font-serif font-semibold text-primary-foreground leading-tight">
+                <h1 className={cn(
+                  "text-lg font-serif font-semibold leading-tight transition-colors",
+                  isScrolled ? "text-foreground" : "text-primary-foreground"
+                )}>
                   {siteConfig.name}
                 </h1>
               </div>
@@ -66,8 +75,11 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   className={cn(
-                    "nav-link text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground",
-                    location.pathname === item.path && "text-primary-foreground active"
+                    "nav-link text-sm font-medium transition-colors",
+                    isScrolled 
+                      ? "text-foreground/70 hover:text-foreground" 
+                      : "text-primary-foreground/80 hover:text-primary-foreground",
+                    location.pathname === item.path && (isScrolled ? "text-foreground" : "text-primary-foreground")
                   )}
                 >
                   {item.label}
@@ -79,23 +91,31 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href={siteConfig.contact.phoneLink}
-                className="flex items-center gap-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                className={cn(
+                  "flex items-center gap-2 text-sm font-medium transition-colors",
+                  isScrolled 
+                    ? "text-foreground/70 hover:text-foreground" 
+                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                )}
               >
                 <Phone className="w-4 h-4" />
                 {siteConfig.contact.phone}
               </a>
               <Link
-                to="/contact"
+                to="/rechtsgebieden"
                 className="btn-gold text-sm"
               >
-                Gratis Consult
+                Meer Info
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-primary-foreground"
+              className={cn(
+                "lg:hidden p-2",
+                isScrolled ? "text-foreground" : "text-primary-foreground"
+              )}
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -126,6 +146,18 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                to="/klachtenregeling"
+                className="block py-4 text-xl font-serif text-primary-foreground/80 hover:text-primary-foreground border-b border-primary-foreground/10 transition-colors"
+              >
+                Klachtenregeling
+              </Link>
+              <Link
+                to="/algemene-voorwaarden"
+                className="block py-4 text-xl font-serif text-primary-foreground/80 hover:text-primary-foreground border-b border-primary-foreground/10 transition-colors"
+              >
+                Algemene Voorwaarden
+              </Link>
             </nav>
           </div>
 
@@ -138,10 +170,10 @@ const Navbar = () => {
               <span className="text-lg">{siteConfig.contact.phone}</span>
             </a>
             <Link
-              to="/contact"
+              to="/rechtsgebieden"
               className="btn-gold block text-center text-lg"
             >
-              Gratis Consult
+              Onze Specialisaties
             </Link>
           </div>
         </div>

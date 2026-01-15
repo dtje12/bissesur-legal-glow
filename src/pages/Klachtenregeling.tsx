@@ -14,7 +14,7 @@ const Klachtenregeling = () => {
             </h1>
             <div className="w-16 h-1 bg-accent mb-6" />
             <p className="text-xl text-primary-foreground/80">
-              Informatie over onze interne klachtenprocedure en de Geschillencommissie Advocatuur.
+              Kantoorklachtenregeling {siteConfig.name}
             </p>
           </div>
         </div>
@@ -23,82 +23,137 @@ const Klachtenregeling = () => {
       {/* Content */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto prose prose-lg">
+          <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  1. Inleiding
+                  Artikel 1 - Begripsbepalingen
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  In deze kantoorklachtenregeling wordt verstaan onder:
+                </p>
+                <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                  <li><strong>Klacht:</strong> iedere schriftelijke uiting van ongenoegen van of namens de cliënt jegens de advocaat of de onder diens verantwoordelijkheid werkzame personen over de totstandkoming en de uitvoering van een overeenkomst van opdracht, de kwaliteit van de dienstverlening of de hoogte van de declaratie, niet zijnde een klacht als bedoeld in paragraaf 4 van de Advocatenwet.</li>
+                  <li><strong>Klager:</strong> de cliënt of diens vertegenwoordiger die een klacht kenbaar maakt.</li>
+                  <li><strong>Klachtenfunctionaris:</strong> de advocaat die is belast met de afhandeling van de klacht, zijnde mr. A.R. Bissessur.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  Artikel 2 - Toepassingsbereik
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  {siteConfig.name} hecht grote waarde aan de tevredenheid van haar cliënten. 
-                  Ondanks onze inspanningen om u zo goed mogelijk van dienst te zijn, kan het 
-                  voorkomen dat u niet tevreden bent over de dienstverlening. In dat geval 
-                  vernemen wij dat graag van u, zodat wij kunnen zoeken naar een passende oplossing.
+                  Deze kantoorklachtenregeling is van toepassing op iedere overeenkomst van opdracht tussen {siteConfig.name} en de cliënt.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  2. Interne Klachtenprocedure
+                  Artikel 3 - Doelstellingen
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Indien u een klacht heeft over de dienstverlening van ons kantoor, verzoeken 
-                  wij u deze eerst aan ons voor te leggen. U kunt uw klacht schriftelijk indienen 
-                  bij:
+                  Deze kantoorklachtenregeling heeft tot doel:
                 </p>
-                <div className="bg-secondary p-6 rounded-lg mb-4">
-                  <p className="text-foreground font-medium">{siteConfig.name}</p>
-                  <p className="text-muted-foreground">t.a.v. {siteConfig.lawyer.name}</p>
-                  <p className="text-muted-foreground">{siteConfig.contact.address.street}</p>
-                  <p className="text-muted-foreground">
-                    {siteConfig.contact.address.postalCode} {siteConfig.contact.address.city}
-                  </p>
-                  <p className="text-muted-foreground mt-2">
-                    Email: <a href={`mailto:${siteConfig.contact.email}`} className="text-primary hover:underline">{siteConfig.contact.email}</a>
-                  </p>
-                </div>
+                <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                  <li>Het vastleggen van een procedure om klachten van cliënten binnen een redelijke termijn op een constructieve wijze af te handelen.</li>
+                  <li>Het vastleggen van een procedure om de oorzaken van klachten van cliënten vast te stellen.</li>
+                  <li>Behoud en verbetering van bestaande relaties door middel van een goede klachtenbehandeling.</li>
+                  <li>Medewerkers trainen in cliëntgericht reageren op klachten.</li>
+                  <li>Verbetering van de kwaliteit van de dienstverlening met behulp van klachtbehandeling en klachtanalyse.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  Artikel 4 - Informatie bij aanvang dienstverlening
+                </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Na ontvangst van uw klacht zullen wij deze zo spoedig mogelijk, doch uiterlijk 
-                  binnen vier weken, in behandeling nemen en schriftelijk reageren.
+                  Deze kantoorklachtenregeling is openbaar gemaakt. De advocaat wijst de cliënt voor het aangaan van de overeenkomst van opdracht erop dat het kantoor een kantoorklachtenregeling hanteert en dat deze van toepassing is op de dienstverlening. {siteConfig.name} heeft via de algemene voorwaarden opgenomen bij welke onafhankelijke partij of instantie een klacht die na behandeling niet is opgelost kan worden voorgelegd ter verkrijging van een bindende uitspraak en heeft dit bij de opdrachtbevestiging kenbaar gemaakt. Klachten als bedoeld in artikel 1 van deze kantoorklachtenregeling die na behandeling niet zijn opgelost worden voorgelegd aan de Geschillencommissie Advocatuur.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  3. Geschillencommissie Advocatuur
+                  Artikel 5 - Interne klachtprocedure
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Indien de interne klachtenprocedure niet leidt tot een voor u bevredigende 
-                  oplossing, kunt u uw klacht voorleggen aan de Geschillencommissie Advocatuur. 
-                  Dit is een onafhankelijke instantie die geschillen tussen advocaten en hun 
-                  cliënten behandelt.
+                  Indien een cliënt het kantoor benadert met een klacht, dan wordt de klacht doorgeleid naar mr. A.R. Bissessur, die daarmee optreedt als klachtenfunctionaris.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  De klachtenfunctionaris stelt degene over wie is geklaagd in kennis van het indienen van de klacht en stelt de klager en degene over wie is geklaagd in de gelegenheid een toelichting te geven op de klacht.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Degene over wie is geklaagd tracht samen met de cliënt tot een oplossing te komen al dan niet na tussenkomst van de klachtenfunctionaris.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  De klachtenfunctionaris handelt de klacht af binnen vier weken na ontvangst van de klacht of doet met opgave van redenen mededeling aan de klager over afwijking van deze termijn met vermelding van de termijn waarbinnen wel een oordeel over de klacht wordt gegeven.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  De klachtenfunctionaris stelt de klager en degene over wie is geklaagd schriftelijk op de hoogte van het oordeel over de gegrondheid van de klacht, al dan niet vergezeld van aanbevelingen.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Meer informatie over de Geschillencommissie Advocatuur vindt u op:{" "}
+                  Indien de klacht naar tevredenheid is afgehandeld, tekenen de klager, de klachtenfunctionaris en degene over wie is geklaagd het oordeel over de gegrondheid van de klacht.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  Artikel 6 - Geheimhouding en kosteloze klachtbehandeling
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  De klachtenfunctionaris en degene over wie is geklaagd nemen bij de klachtbehandeling geheimhouding in acht.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  De klager is geen vergoeding verschuldigd voor de kosten van de behandeling van de klacht.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  Artikel 7 - Verantwoordelijkheden
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  De klachtenfunctionaris is verantwoordelijk voor de tijdige afhandeling van de klacht.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Degene over wie is geklaagd houdt de klachtenfunctionaris op de hoogte over eventueel contact en een mogelijke oplossing.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  De klachtenfunctionaris houdt de klager op de hoogte over de afhandeling van de klacht.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  De klachtenfunctionaris houdt het klachtdossier bij.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
+                  Artikel 8 - Klachtregistratie
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  De klachtenfunctionaris registreert de klacht met daarbij het klachtonderwerp. Een klacht kan in meerdere onderwerpen worden ingedeeld. De klachtenfunctionaris brengt periodiek verslag uit over de afhandeling van de klachten en doet aanbevelingen ter voorkoming van nieuwe klachten, alsmede ter verbetering van procedures. Eenmaal per jaar worden de verslagen en de aanbevelingen op het kantoor besproken en ter besluitvorming voorgelegd.
+                </p>
+              </div>
+
+              <div className="bg-secondary p-6 rounded-lg">
+                <h3 className="font-serif font-semibold text-foreground mb-4">Geschillencommissie Advocatuur</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Indien de klacht na behandeling niet is opgelost, kan deze worden voorgelegd aan de Geschillencommissie Advocatuur:
+                </p>
+                <p className="text-muted-foreground text-sm">
                   <a 
                     href="https://www.geschillencommissie.nl/over-ons/commissies/advocatuur/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-primary hover:underline"
                   >
-                    www.geschillencommissie.nl
+                    www.geschillencommissie.nl/over-ons/commissies/advocatuur
                   </a>
                 </p>
               </div>
 
-              <div>
-                <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                  4. Nederlandse Orde van Advocaten
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  {siteConfig.lawyer.name} is ingeschreven bij de Nederlandse Orde van Advocaten 
-                  en onderworpen aan de voor advocaten geldende gedragsregels. Bij klachten over 
-                  gedrag van de advocaat kunt u zich ook wenden tot de Deken van de Orde van 
-                  Advocaten in het arrondissement waar de advocaat kantoor houdt.
-                </p>
-              </div>
-
-              <div className="border-t border-border pt-8">
+              <div className="border-t border-border pt-6">
                 <p className="text-muted-foreground text-sm">
                   Heeft u vragen over onze klachtenregeling? Neem dan gerust{" "}
                   <Link to="/contact" className="text-primary hover:underline">
