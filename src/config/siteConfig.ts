@@ -14,8 +14,8 @@ export const siteConfig = {
       full: "Weimarstraat 227, 2562 HG Den Haag"
     },
     openingHours: {
-      weekdays: "Maandag - Vrijdag: 09:00 - 17:30",
-      weekend: "Weekend: Op afspraak"
+      weekdays: "Maandag - Vrijdag: 09:00 - 17:00",
+      weekend: "Zaterdag & Zondag: Gesloten"
     },
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Weimarstraat+227+2562+HG+Den+Haag",
     googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.8!2d4.2867!3d52.0705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDA0JzEzLjgiTiA0wrAxNycxMi4xIkU!5e0!3m2!1snl!2snl!4v1234567890"
