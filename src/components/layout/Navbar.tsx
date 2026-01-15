@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +35,9 @@ const Navbar = () => {
   }, [isOpen]);
 
   const mainNavItems = siteConfig.navigation;
+  
+  // Determine if we should use light text (on dark background)
+  const useLightText = isHomePage && !isScrolled;
 
   return (
     <>
@@ -42,20 +46,35 @@ const Navbar = () => {
           "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
           isScrolled
             ? "bg-background shadow-lg py-3"
-            : "bg-background/80 backdrop-blur-sm py-4"
+            : "bg-transparent py-4"
         )}
       >
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded flex items-center justify-center transition-all bg-primary">
-                <Scale className="w-5 h-5 text-primary-foreground" />
+              <div className={cn(
+                "w-10 h-10 rounded flex items-center justify-center transition-all",
+                useLightText ? "bg-accent" : "bg-primary"
+              )}>
+                <Scale className={cn(
+                  "w-5 h-5",
+                  useLightText ? "text-primary" : "text-primary-foreground"
+                )} />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-lg font-serif font-semibold leading-tight text-foreground">
-                  {siteConfig.name}
-                </h1>
+                <span className={cn(
+                  "text-lg font-serif font-semibold leading-tight transition-colors",
+                  useLightText ? "text-accent" : "text-foreground"
+                )}>
+                  Bissessur
+                </span>
+                <span className={cn(
+                  "text-sm ml-2 transition-colors",
+                  useLightText ? "text-primary-foreground/70" : "text-muted-foreground"
+                )}>
+                  Advocatenkantoor
+                </span>
               </div>
             </Link>
 
@@ -66,8 +85,11 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   className={cn(
-                    "nav-link text-sm font-medium transition-colors text-foreground/70 hover:text-foreground",
-                    location.pathname === item.path && "text-foreground"
+                    "nav-link text-sm font-medium transition-colors",
+                    useLightText 
+                      ? "text-primary-foreground/80 hover:text-primary-foreground" 
+                      : "text-foreground/70 hover:text-foreground",
+                    location.pathname === item.path && (useLightText ? "text-primary-foreground" : "text-foreground")
                   )}
                 >
                   {item.label}
@@ -77,25 +99,21 @@ const Navbar = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-4">
-              <a
-                href={siteConfig.contact.phoneLink}
-                className="flex items-center gap-2 text-sm font-medium transition-colors text-foreground/70 hover:text-foreground"
-              >
-                <Phone className="w-4 h-4" />
-                {siteConfig.contact.phone}
-              </a>
               <Link
-                to="/rechtsgebieden"
+                to="/contact"
                 className="btn-gold text-sm"
               >
-                Meer Info
+                Neem Contact Op
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-foreground"
+              className={cn(
+                "lg:hidden p-2",
+                useLightText ? "text-primary-foreground" : "text-foreground"
+              )}
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -150,10 +168,10 @@ const Navbar = () => {
               <span className="text-lg">{siteConfig.contact.phone}</span>
             </a>
             <Link
-              to="/rechtsgebieden"
+              to="/contact"
               className="btn-gold block text-center text-lg"
             >
-              Onze Specialisaties
+              Neem Contact Op
             </Link>
           </div>
         </div>
