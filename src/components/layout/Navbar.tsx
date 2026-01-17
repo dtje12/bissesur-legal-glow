@@ -95,18 +95,6 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/klachtenregeling"
-                className={cn(
-                  "nav-link text-sm font-medium transition-colors",
-                  useLightText 
-                    ? "text-primary-foreground/80 hover:text-primary-foreground" 
-                    : "text-foreground/70 hover:text-foreground",
-                  location.pathname === "/klachtenregeling" && (useLightText ? "text-primary-foreground" : "text-foreground")
-                )}
-              >
-                Klachtenregeling
-              </Link>
             </div>
 
             {/* Desktop CTA */}
