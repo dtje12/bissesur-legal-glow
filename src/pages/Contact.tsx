@@ -6,8 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { contactFormSchema, safeEncodeURIComponent } from "@/lib/sanitize";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     naam: "",
     email: "",
@@ -15,23 +18,50 @@ const Contact = () => {
     onderwerp: "",
     bericht: "",
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const mailtoLink = `mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(
-      formData.onderwerp || "Contact via website"
-    )}&body=${encodeURIComponent(
-      `Naam: ${formData.naam}\nEmail: ${formData.email}\nTelefoon: ${formData.telefoon}\n\nBericht:\n${formData.bericht}`
+    // Validate form data
+    const result = contactFormSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast({
+        title: "Formulier ongeldig",
+        description: "Controleer de ingevulde gegevens.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const sanitizedData = result.data;
+    
+    const mailtoLink = `mailto:${siteConfig.contact.email}?subject=${safeEncodeURIComponent(
+      sanitizedData.onderwerp || "Contact via website"
+    )}&body=${safeEncodeURIComponent(
+      `Naam: ${sanitizedData.naam}\nEmail: ${sanitizedData.email}\nTelefoon: ${sanitizedData.telefoon}\n\nBericht:\n${sanitizedData.bericht}`
     )}`;
     
     window.location.href = mailtoLink;
@@ -129,14 +159,14 @@ const Contact = () => {
               {/* Map */}
               <div className="rounded-lg overflow-hidden border border-border">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.547738888!2d4.2867!3d52.0705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b71cbea53e75%3A0x0!2sWeimarstraat%20227%2C%202562%20HG%20Den%20Haag!5e0!3m2!1snl!2snl!4v1234567890"
+                  src={siteConfig.contact.googleMapsEmbed}
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
-                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Locatie Advocatenkantoor Bissesur"
+                  sandbox="allow-scripts allow-same-origin"
                 />
               </div>
               <a
@@ -169,11 +199,14 @@ const Contact = () => {
                         name="naam"
                         type="text"
                         required
+                        maxLength={100}
                         value={formData.naam}
                         onChange={handleChange}
                         placeholder="Uw volledige naam"
-                        className="bg-background"
+                        className={`bg-background ${errors.naam ? "border-destructive" : ""}`}
+                        aria-invalid={!!errors.naam}
                       />
+                      {errors.naam && <p className="text-xs text-destructive">{errors.naam}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email *</Label>
@@ -182,11 +215,14 @@ const Contact = () => {
                         name="email"
                         type="email"
                         required
+                        maxLength={255}
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="uw@email.nl"
-                        className="bg-background"
+                        className={`bg-background ${errors.email ? "border-destructive" : ""}`}
+                        aria-invalid={!!errors.email}
                       />
+                      {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
                     </div>
                   </div>
 
@@ -197,10 +233,13 @@ const Contact = () => {
                         id="telefoon"
                         name="telefoon"
                         type="tel"
+                        maxLength={20}
+                        pattern="[0-9+\-\s()]*"
                         value={formData.telefoon}
                         onChange={handleChange}
                         placeholder="Uw telefoonnummer"
-                        className="bg-background"
+                        className={`bg-background ${errors.telefoon ? "border-destructive" : ""}`}
+                        aria-invalid={!!errors.telefoon}
                       />
                     </div>
                     <div className="space-y-2">
@@ -209,6 +248,7 @@ const Contact = () => {
                         id="onderwerp"
                         name="onderwerp"
                         type="text"
+                        maxLength={200}
                         value={formData.onderwerp}
                         onChange={handleChange}
                         placeholder="Waar gaat het over?"
@@ -223,12 +263,15 @@ const Contact = () => {
                       id="bericht"
                       name="bericht"
                       required
+                      maxLength={5000}
                       value={formData.bericht}
                       onChange={handleChange}
                       placeholder="Beschrijf kort uw vraag of situatie..."
                       rows={5}
-                      className="bg-background resize-none"
+                      className={`bg-background resize-none ${errors.bericht ? "border-destructive" : ""}`}
+                      aria-invalid={!!errors.bericht}
                     />
+                    {errors.bericht && <p className="text-xs text-destructive">{errors.bericht}</p>}
                   </div>
 
                   <p className="text-xs text-muted-foreground">
