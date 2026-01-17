@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { contactFormSchema, safeEncodeURIComponent } from "@/lib/sanitize";
 import { useToast } from "@/hooks/use-toast";
+import { checkRateLimit, recordAttempt, formatRemainingTime, contactFormRateLimit } from "@/lib/rateLimit";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -37,6 +38,17 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Check rate limit first
+    const rateLimitResult = checkRateLimit(contactFormRateLimit);
+    if (!rateLimitResult.allowed) {
+      toast({
+        title: "Te veel pogingen",
+        description: `Probeer het opnieuw over ${formatRemainingTime(rateLimitResult.remainingTime)}.`,
+        variant: "destructive",
+      });
+      return;
+    }
+    
     // Validate form data
     const result = contactFormSchema.safeParse(formData);
     
@@ -55,6 +67,9 @@ const Contact = () => {
       });
       return;
     }
+
+    // Record the attempt after successful validation
+    recordAttempt(contactFormRateLimit.key, contactFormRateLimit.windowMs);
 
     const sanitizedData = result.data;
     
