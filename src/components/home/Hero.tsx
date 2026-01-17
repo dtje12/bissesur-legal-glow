@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/siteConfig";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+    <section className="relative min-h-[82vh] sm:min-h-screen flex items-center hero-gradient overflow-hidden">
       {/* Clean background - no pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-navy-dark" />
 
