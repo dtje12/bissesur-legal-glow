@@ -125,11 +125,20 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "mobile-menu lg:hidden",
+          "mobile-menu lg:hidden overflow-hidden",
           isOpen && "open"
         )}
       >
-        <div className="flex flex-col h-full pt-20 pb-8 px-6">
+        {/* Close Button */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-6 right-6 p-2 text-primary-foreground hover:text-accent transition-colors z-10"
+          aria-label="Sluit menu"
+        >
+          <X className="w-8 h-8" />
+        </button>
+
+        <div className="flex flex-col h-full pt-20 pb-8 px-6 overflow-y-auto">
           <div className="flex-1">
             <nav className="space-y-1">
               {siteConfig.navigation.map((item) => (
