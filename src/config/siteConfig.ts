@@ -4,17 +4,20 @@ export const siteConfig = {
   description: "Professionele juridische bijstand met persoonlijke aandacht. Wij staan voor u klaar.",
   
   contact: {
-    phone: "070 427 6852",
+    phone: "070 - 427 6852",
     phoneLink: "tel:0704276852",
-    email: "info@advocatenkantoor-bissessur.nl",
+    fax: "070 - 326 0431",
+    mobile: "06 - 3379 4611",
+    mobileLink: "tel:0633794611",
+    email: "arbissessur@planet.nl",
     address: {
       street: "Weimarstraat 227",
       postalCode: "2562 HG",
-      city: "Den Haag",
-      full: "Weimarstraat 227, 2562 HG Den Haag"
+      city: "DEN HAAG",
+      full: "Weimarstraat 227, 2562 HG DEN HAAG"
     },
     openingHours: {
-      weekdays: "Maandag - Vrijdag: 09:00 - 17:00",
+      weekdays: "Maandag tot en met vrijdag van 9:30 uur tot 17:00 uur",
       weekend: "Zaterdag & Zondag: Gesloten"
     },
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Weimarstraat+227+2562+HG+Den+Haag",
