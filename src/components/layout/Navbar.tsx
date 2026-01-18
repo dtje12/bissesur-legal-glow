@@ -125,20 +125,34 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "mobile-menu lg:hidden overflow-hidden",
+          "mobile-menu lg:hidden",
           isOpen && "open"
         )}
+        onTouchMove={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-6 right-6 p-2 text-primary-foreground hover:text-accent transition-colors z-10"
-          aria-label="Sluit menu"
-        >
-          <X className="w-8 h-8" />
-        </button>
+        {/* Header with Logo and Close Button */}
+        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-6 z-10">
+          {/* Logo */}
+          <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded bg-accent flex items-center justify-center">
+              <Scale className="w-5 h-5 text-primary" />
+            </div>
+            <span className="text-lg font-serif font-semibold text-accent">
+              Bissessur
+            </span>
+          </Link>
 
-        <div className="flex flex-col h-full pt-20 pb-8 px-6 overflow-y-auto">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="p-2 text-primary-foreground hover:text-accent transition-colors"
+            aria-label="Sluit menu"
+          >
+            <X className="w-8 h-8" />
+          </button>
+        </div>
+
+        <div className="flex flex-col h-full pt-24 pb-8 px-6 overflow-y-auto overscroll-contain">
           <div className="flex-1">
             <nav className="space-y-1">
               {siteConfig.navigation.map((item) => (
