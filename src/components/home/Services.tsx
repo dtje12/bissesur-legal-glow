@@ -1,19 +1,28 @@
 import { Link } from "react-router-dom";
-import { Scale, Gavel, Users, Briefcase, Building, Home, ArrowRight } from "lucide-react";
-import { siteConfig } from "@/config/siteConfig";
+import { Users, Gavel, Globe, ArrowRight } from "lucide-react";
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Scale,
-  Gavel,
-  Users,
-  Briefcase,
-  Building,
-  Home,
-};
+const services = [
+  {
+    id: "familierecht",
+    title: "Familierecht",
+    shortDescription: "Echtscheiding, alimentatie, omgangsregelingen, gezagskwesties en ouderschapsplannen.",
+    icon: Users,
+  },
+  {
+    id: "strafrecht",
+    title: "Strafrecht",
+    shortDescription: "Verdediging van verdachten, bijstand bij verhoren en onderhandeling met het OM.",
+    icon: Gavel,
+  },
+  {
+    id: "vreemdelingenrecht",
+    title: "Vreemdelingenrecht",
+    shortDescription: "MVV-aanvragen, verblijfsvergunningen, gezinshereniging en naturalisatie.",
+    icon: Globe,
+  },
+];
 
 const Services = () => {
-  const displayServices = siteConfig.services.slice(0, 4);
-
   return (
     <section className="section-padding bg-secondary">
       <div className="container-custom">
@@ -24,15 +33,15 @@ const Services = () => {
           </h2>
           <div className="decorative-line mb-4" />
           <p className="text-muted-foreground">
-            Wij bieden juridische bijstand op diverse rechtsgebieden. 
-            Klik voor meer informatie over onze specialisaties.
+            De praktijk van mr. Bissessur richt zich met name op de rechtsgebieden 
+            personen- en familierecht (zijn specialisatie), strafrecht en (regulier) vreemdelingenrecht.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          {displayServices.map((service, index) => {
-            const IconComponent = iconMap[service.icon] || Scale;
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
             return (
               <Link
                 key={service.id}
