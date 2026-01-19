@@ -82,7 +82,9 @@ const Footer = () => {
               Snelle Links
             </h3>
             <ul className="space-y-2">
-              {siteConfig.navigation.map((item) => (
+              {siteConfig.navigation
+                .filter((item) => item.path !== "/tarieven")
+                .map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
