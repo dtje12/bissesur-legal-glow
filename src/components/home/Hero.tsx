@@ -28,7 +28,7 @@ const Hero = () => {
               to="/contact"
               className="btn-gold inline-flex items-center justify-center gap-2 text-base"
             >
-              Gratis Consult Aanvragen
+              Neem Vrijblijvend Contact Op
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
