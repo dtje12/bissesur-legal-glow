@@ -10,6 +10,7 @@ import Tarieven from "./pages/Tarieven";
 import Contact from "./pages/Contact";
 import Klachtenregeling from "./pages/Klachtenregeling";
 import AlgemeneVoorwaarden from "./pages/AlgemeneVoorwaarden";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/klachtenregeling" element={<Klachtenregeling />} />
           <Route path="/algemene-voorwaarden" element={<AlgemeneVoorwaarden />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
