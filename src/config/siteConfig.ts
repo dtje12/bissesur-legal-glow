@@ -106,7 +106,6 @@ Met een scherp juridisch inzicht en een persoonlijke benadering streeft Mr. Biss
   footerLinks: [
     { label: "Klachtenregeling", path: "/klachtenregeling" },
     { label: "Algemene Voorwaarden", path: "/algemene-voorwaarden" },
-    { label: "Privacy Statement", path: "/privacy" },
-    { label: "Tarieven", path: "/tarieven" }
+    { label: "Privacy Statement", path: "/privacy" }
   ]
 };
