@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout";
-import { siteConfig } from "@/config/siteConfig";
-import { CheckCircle, Award, BookOpen, Users, Scale } from "lucide-react";
-import mrBissessur from "@/assets/mr-bissessur.png";
+import { Award, BookOpen, Scale, Users } from "lucide-react";
+import mrBissessurPortrait from "@/assets/mr-bissessur-portrait.png";
 
 const OverOns = () => {
   return (
@@ -11,11 +10,11 @@ const OverOns = () => {
         <div className="container-custom">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4">
-              Advocaat mr. A.R. Bissessur
+              Mr. A.R. Bissessur
             </h1>
             <div className="w-16 h-1 bg-accent mb-6" />
             <p className="text-xl text-primary-foreground/80">
-              Uw recht, onze strijd. Persoonlijke en deskundige juridische bijstand.
+              Advocaat - Persoonlijke en deskundige juridische bijstand
             </p>
           </div>
         </div>
@@ -31,7 +30,7 @@ const OverOns = () => {
                 <div className="bg-secondary rounded-lg overflow-hidden">
                   <div className="aspect-square overflow-hidden">
                     <img 
-                      src={mrBissessur} 
+                      src={mrBissessurPortrait} 
                       alt="Mr. A.R. Bissessur - Advocaat" 
                       className="w-full h-full object-cover object-top"
                     />
@@ -64,7 +63,7 @@ const OverOns = () => {
               </div>
             </div>
 
-            {/* Bio & Values */}
+            {/* Bio & Specialisaties */}
             <div className="lg:col-span-2 space-y-12">
               {/* Biography */}
               <div>
@@ -109,73 +108,42 @@ const OverOns = () => {
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-6">
                   Specialisaties
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="space-y-6">
+                  {/* Familierecht */}
                   <div className="gold-border bg-secondary/50 rounded-r-lg p-6">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="w-6 h-6 text-accent mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-serif font-semibold text-foreground mb-2">
-                          Familierecht
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Specialisatie in personen- en familierecht
-                        </p>
-                      </div>
-                    </div>
+                    <h3 className="font-serif font-semibold text-foreground text-lg mb-2">
+                      Personen- en Familierecht
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Specialisatie in echtscheiding, alimentatie, omgangsregelingen, gezag over kinderen 
+                      en ouderschapsplannen. Begeleiding bij alle familierechtelijke procedures met oog 
+                      voor de emotionele aspecten.
+                    </p>
                   </div>
-                  <div className="gold-border bg-secondary/50 rounded-r-lg p-6">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="w-6 h-6 text-accent mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-serif font-semibold text-foreground mb-2">
-                          Strafrecht
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Verdediging in strafrechtelijke zaken
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="gold-border bg-secondary/50 rounded-r-lg p-6">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="w-6 h-6 text-accent mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-serif font-semibold text-foreground mb-2">
-                          Vreemdelingenrecht
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Regulier vreemdelingenrecht
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* Core Values */}
-              <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-6">
-                  Onze Kernwaarden
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {siteConfig.lawyer.values.map((value) => (
-                    <div
-                      key={value.title}
-                      className="gold-border bg-secondary/50 rounded-r-lg p-6"
-                    >
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="w-6 h-6 text-accent mt-0.5 flex-shrink-0" />
-                        <div>
-                          <h3 className="font-serif font-semibold text-foreground mb-2">
-                            {value.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground">
-                            {value.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                  {/* Strafrecht */}
+                  <div className="gold-border bg-secondary/50 rounded-r-lg p-6">
+                    <h3 className="font-serif font-semibold text-foreground text-lg mb-2">
+                      Strafrecht
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Verdediging van verdachten in strafzaken, bijstand tijdens politieverhoren en 
+                      onderhandeling met het Openbaar Ministerie. Van lichte overtredingen tot zware 
+                      strafzaken.
+                    </p>
+                  </div>
+
+                  {/* Vreemdelingenrecht */}
+                  <div className="gold-border bg-secondary/50 rounded-r-lg p-6">
+                    <h3 className="font-serif font-semibold text-foreground text-lg mb-2">
+                      Regulier Vreemdelingenrecht
+                    </h3>
+                    <p className="text-muted-foreground">
+                      Aanvragen voor machtiging tot voorlopig verblijf (MVV), verblijfsvergunningen 
+                      wegens gezinshereniging, studie of arbeid, verkrijging van het Nederlanderschap 
+                      via optie of naturalisatie, en begeleiding bij bezwaar- en beroepsprocedures.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

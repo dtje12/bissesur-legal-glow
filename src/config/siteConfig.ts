@@ -98,7 +98,7 @@ Met een scherp juridisch inzicht en een persoonlijke benadering streeft Mr. Biss
   navigation: [
     { label: "Home", path: "/" },
     { label: "Rechtsgebieden", path: "/rechtsgebieden" },
-    { label: "Over Ons", path: "/over-ons" },
+    { label: "Mr. A.R. Bissessur", path: "/over-ons" },
     { label: "Tarieven", path: "/tarieven" },
     { label: "Contact", path: "/contact" },
   ],
