@@ -18,7 +18,7 @@ const OfficeInfo = () => {
               />
             </div>
             {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/10 rounded-lg -z-10" />
+            <div className="absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-24 h-24 bg-accent/10 rounded-lg -z-10" />
           </div>
 
           {/* Contact Information */}
