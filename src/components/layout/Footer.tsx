@@ -106,12 +106,12 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/60">
               © {new Date().getFullYear()} {siteConfig.name}. Alle rechten voorbehouden.
             </p>
-            <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-center">
               {siteConfig.footerLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors whitespace-nowrap"
+                  className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors sm:whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
